@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>列車速度 v3.5.1</title>
+    <link rel="stylesheet" href="./style.css">
+
 <style>
   /* 1. 線上引入思源黑體 (Noto Sans TC) 與 思源等寬數字 (Noto Sans Mono)
    ========================================================================== */
@@ -105,22 +114,22 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
   display: flex; 
   justify-content: center; 
-  padding: 20px; 
+  padding: 12px; /* 🚀 從 20px 縮減到 12px，幫手機版兩側擠出更多空間 */
   transition: background 0.3s, color 0.3s;
 }
-
+  
 /* 主容器 */
 .calculator { 
   background: var(--card-bg); 
-  padding: 20px; 
+  padding: 16px; /* 🚀 內距稍微縮小，避免在窄螢幕上壓縮到輸入欄位 */
   border-radius: 16px; 
-  width: 100%; 
-  max-width: 440px; 
+  width: 100%; /* 🎯 關鍵：寬度 100% 才能隨螢幕縮放 */
+  max-width: 440px; /* 🎯 關鍵：最大上限鎖在 440px，在電腦上看就不會拉得太寬 */
   border: 1px solid var(--border-color); 
   box-shadow: 0 12px 30px rgba(0,0,0,0.15); 
   transition: background 0.3s, border-color 0.3s;
+  box-sizing: border-box; /* 確保 padding 不會額外撐大容器 */
 }
-
 /* 頂部控制列 */
 .top-controls {
   display: flex;
@@ -861,6 +870,7 @@ button[onclick*="reset"]:active {
   font-size: 14px;
 }
   </style>
+  </head>
 <!--4.1.0改進於4.0.1內容：
 1.修正紀錄功能的計算結果紀錄bug。
 2.更改紀錄功能頁數顯示限制。
